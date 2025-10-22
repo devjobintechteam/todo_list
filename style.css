@@ -1,0 +1,53 @@
+  body {
+      background: linear-gradient(135deg, #f9f9f9, #ffe9d6);
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .todo-container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 400px;
+      max-width: 90%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff8c42;
+    }
+
+    .input-group input {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .btn-add{
+      background: #ff8c42;
+      color: white;
+      border: none;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .btn-add:hover{
+      background: #ff6b00;
+    }
+    #cleartask{
+      background: #ff8c42;
+      color: white;
+      border: none;
+      border-radius: 10PX;
+      position: absolute;
+      left: 40%;
+    }
+    #cleartask:hover{
+      font-size: large;
+    }
+
+   
