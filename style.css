@@ -9,11 +9,12 @@
     }
 
     .todo-container {
+     gap: 20px;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 30px;
-      width: 400px;
+      padding: 40px;
+      width: 800px;
       max-width: 90%;
     }
 
@@ -49,5 +50,43 @@
     #cleartask:hover{
       font-size: large;
     }
+    .alert {
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	text-align: center;
+	padding: 0.75rrem 1.25rrem;
+	border-radius: 10px;
+	line-height: 1.6rem;
+}
+.alert-warning {
+	color: #856404;
+	background-color: #fff3cd;
+	border-color: #ffeeba;
+}
+.noty_theme__metroui.noty_bar .noty_body {
+	background: green;
+	color: white;
+	border-radius: 0.28571429rem;
+	box-shadow: 0 0 0 1px var(--green) inset, 0 0 0 0 transparent;
+}
+.noty_theme__metroui.noty_type__error {
+	background: none;
+}
+.noty_theme__metroui.noty_bar.noty_type__error .noty_body {
+	background: red;
+	color: white;
+	border-radius: 0.28571429rem !important;
+	box-shadow: 0 0 0 1px var(--red) inset, 0 0 0 0 transparent;
+}
+#edit-modal,#remove-modal,#clear-all-tasks-modal{
+ position: absolute;
+ top: 20%;
+ left: 20%;
+  width: 50%;
+  height: 35%;
+  border-radius: 20px;
+}
+
 
    
