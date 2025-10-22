@@ -76,7 +76,7 @@
 	background: green;
 	color: white;
 	border-radius: 0.28571429rem;
-	box-shadow: 0 0 0 1px var(--green) inset, 0 0 0 0 transparent;
+	box-shadow: 0 0 0 1px green inset, 0 0 0 0 transparent;
 }
 .noty_theme__metroui.noty_type__error {
 	background: none;
@@ -85,7 +85,7 @@
 	background: red;
 	color: white;
 	border-radius: 0.28571429rem !important;
-	box-shadow: 0 0 0 1px var(--red) inset, 0 0 0 0 transparent;
+	box-shadow: 0 0 0 1px red inset, 0 0 0 0 transparent;
 }
 #edit-modal,#remove-modal,#clear-all-tasks-modal{
  position: absolute;
