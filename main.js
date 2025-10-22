@@ -97,35 +97,27 @@ function addTask(event) {
   showTasksList();
 }
 
-function completeTask(id) {
-  const taskIndex = list.findIndex((t) => t.id === id);
-  if (taskIndex === -1) return;
-
-  list[taskIndex].completed = !list[taskIndex].completed;
-  saveTasks();
-  showTasksList();
-}
-
 function removeTask(id) {
-  list = list.filter((t) => t.id !== id);
+  list = list.filter(t => t.id !== id)
   saveTasks();
-  addTaskInput.value = "";
-  showNotification("error", "Task was successfully deleted");
-  showTasksList();
+
+  showNotification("error", "Task was successfully deleted")
+  showTasksList()
 }
 
 function editTask(id) {
-  const taskText = document.querySelector("#task-text").value.trim();
-  if (taskText.length === 0) return;
-  const taskIndex = list.findIndex((t) => t.id === id);
-  if (taskIndex === -1) return;
+  const taskText = document.querySelector("#task-text").value
 
-  list[taskIndex].text = taskText;
+  if (taskText.trim().length === 0) return
+  const taskIndex = list.findIndex(t => t.id == id)
+
+  list[taskIndex].text = taskText
   saveTasks();
-   addTaskInput.value = "";
-  showNotification("success", "Task was successfully updated");
-  showTasksList();
+
+  showNotification("success", "Task was successfully updated")
+  showTasksList()
 }
+
 
 function clearAllTasks() {
   if (list.length > 0) {
@@ -139,27 +131,28 @@ function clearAllTasks() {
 }
 
 function showEditModal(id) {
-  const taskIndex = list.findIndex((t) => t.id === id);
-  if (taskIndex === -1) return;
+  const task = list.find(t => t.id == id);
+  if (!task) return;
+  document.querySelector("#task-id").value = id;
+  document.querySelector("#task-text").value = task.text.trim();
 
-  const { text } = list[taskIndex];
-  document.querySelector("#edit-modal .content #task-id").value = id;
-  document.querySelector("#edit-modal .content #task-text").value = text.trim();
-
-  document
-    .querySelector("#update-button")
-    .addEventListener("click", () => editTask(+id));
+  const updateBtn = document.querySelector("#update-button");
+  updateBtn.replaceWith(updateBtn.cloneNode(true));
+  document.querySelector("#update-button").addEventListener("click", () => editTask(+id));
 
   $("#edit-modal.modal").modal("show");
 }
 
-function showRemoveModal(id) {
-  document
-    .querySelector("#remove-button")
-    .addEventListener("click", () => removeTask(+id));
 
+function showRemoveModal(id) {
+  
+  const removeBtn = document.querySelector("#remove-button");
+  removeBtn.replaceWith(removeBtn.cloneNode(true));
+  document.querySelector("#remove-button").addEventListener("click", () => removeTask(+id));
   $("#remove-modal.modal").modal("show");
 }
+
+
 
 function showNotification(type, text) {
  let layout = "bottomLeft";
@@ -172,6 +165,7 @@ new Noty({
   text: `<i class="check icon"></i> ${text}`,
   layout,
   timeout: 1000,
+  closeWith: ["click"],
   progressBar: true,
   theme: "metroui",
 }).show();
