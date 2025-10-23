@@ -46,8 +46,8 @@ function showTasksList() {
             <label>${task.text}</label>
           </div>
           <div class="column">
-            <i data-id="${task.id}" style="position: absolute; left:83%;" class="edit outline icon"></i>
-            <i data-id="${task.id}" style="position: absolute; left:90%;" class="trash alternate outline remove icon"></i>
+            <i data-id="${task.id}"  class="edit outline icon"></i>
+            <i data-id="${task.id}" class="trash alternate outline remove icon"></i>
           </div>
         </li>
       `;
